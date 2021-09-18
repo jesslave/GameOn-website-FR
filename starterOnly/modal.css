@@ -183,6 +183,35 @@ main {
   padding-top: 10px;
 }
 
+.bgroundValidation {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(26, 39, 156, 0.4);
+}
+
+.contentValidation {
+  text-align: center;
+  margin: 5% auto;
+  width: 100%;
+  max-width: 500px;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  background: #232323;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  padding-top: 10px;
+}
+
+
+
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
@@ -333,6 +362,10 @@ input[data-error]::after {
   cursor: pointer;
   border: 0;
 }
+
+.btn-close {
+  margin-bottom: 3rem;
+}
 /* custom select styles */
 .custom-select {
   position: relative;
@@ -478,6 +511,17 @@ footer {
   padding-right: 2vw;
   margin: 0 20px;
 }
+
+.confirmation-submit {
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.success-text {
+  margin: 6rem;
+  font-size: 3rem;
+}
+
 @media screen and (max-width: 800px) {
   .hero-section {
     display: block;

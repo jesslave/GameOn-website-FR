@@ -9,6 +9,7 @@ function editNav() {
 
 // DOM Elements
 const modalbg = document.querySelector(".bground");
+const modalValidation = document.querySelector(".bgroundValidation");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const firstNameInput = document.getElementById("first");
@@ -24,6 +25,8 @@ const locationFiveInput = document.getElementById("location5");
 const locationSixInput = document.getElementById("location6");
 const checkboxOneInput = document.getElementById("checkbox1");
 const checkboxTwoInput = document.getElementById("checkbox2");
+
+
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -52,4 +55,16 @@ function closeForm() {
 
 }
 
+function closeFormValidationModal() {
+  modalValidation.style.display = "none"
+}
 
+function validate(event) {
+  event.preventDefault();
+  modalValidation.style.display = "block";
+}
+
+
+function validate() {
+  modalValidation.style.display = "block";
+}
