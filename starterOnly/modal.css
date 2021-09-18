@@ -184,7 +184,7 @@ main {
 }
 
 .bgroundValidation {
-  display: block;
+  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -210,6 +210,12 @@ main {
   padding-top: 10px;
 }
 
+.firstnameError, .nameError, .emailError, .birthdateError, .cityError, .conditionError {
+  color:red;
+  font-size: small;
+  display: none;
+  margin: 0;
+}
 
 
 .modal-body {
