@@ -17,7 +17,7 @@ body {
   background-image: url("background.png");
   font-family: var(--font-default);
   font-size: 18px;
-  max-width: 1300px;
+  max-width: 1800px;
   margin: 0 auto;
 }
 
@@ -210,7 +210,7 @@ main {
   padding-top: 10px;
 }
 
-.firstnameError, .nameError, .emailError, .birthdateError, .cityError, .conditionError {
+.firstnameError, .nameError, .emailError, .birthdateError, .cityError, .conditionError, .quantityError {
   color:red;
   font-size: small;
   display: none;
@@ -484,14 +484,15 @@ input[data-error]::after {
   font-weight: normal;
   margin-top: 57px;
   padding: 0;
+  margin: 15rem 0 0 0;
+  font-size: 2rem;
 }
 .btn-signup {
   outline: none;
   text-transform: capitalize;
-  font-size: 1.3rem;
-  padding: 15px 23px;
-  margin: 0;
-  margin-top: 59px;
+  font-size: 1.5rem;
+  padding: 1rem 2.5rem;
+  margin: 10rem 0 0 0;
 }
 .hero-img {
   grid-column: span 8;
@@ -501,6 +502,7 @@ input[data-error]::after {
   height: 100%;
   display: block;
   padding: 0;
+  object-fit: cover;
 }
 .copyrights {
   color: #fe142f;
@@ -529,6 +531,34 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
+
+  .icon-nav-bar{
+    color: red;
+  }
+
+  .topnav a:hover .icon-nav-bar{
+    color: white;
+  }
+
+  .topnav .icon {
+    top: 2.2rem;
+    right: 0;
+  }
+
+  .topnav.responsive .icon {
+    top: 2.2rem;
+    right: 0;
+  }
+  .topnav { 
+    padding: 2rem 0 0 1.5rem;
+  }
+  
+  .success-text {
+    font-size: 2.5rem;
+  }
+  .img-logo {
+    width: 50%;
+  }
   .hero-section {
     display: block;
     box-shadow: unset;
@@ -545,12 +575,13 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 3rem;
     white-space: normal;
+    font-weight: bold;
   }
   .hero-text {
-    width: unset;
-    font-size: 1.5rem;
+    width: 95%;
+    font-size: 1.1rem;
   }
   .hero-img img {
     border-radius: 10px;

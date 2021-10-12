@@ -32,6 +32,10 @@ const emailError = document.querySelector(".emailError");
 const birthdateError = document.querySelector(".birthdateError");
 const cityError = document.querySelector(".cityError");
 const conditionError = document.querySelector(".conditionError");
+const quantityError = document.querySelector(".quantityError");
+
+// Regex
+const checkName = /[a-zA-Z]{3,}/;
 
 const form = document.getElementById("form");
 form.addEventListener('submit', handleForm);
@@ -92,44 +96,75 @@ function resetErrors() {
   birthDateInput.style.borderColor = "transparent";
   cityError.style.display = "none";
   conditionError.style.display = "none";
+  quantityError.style.display = "none";
+  quantityInput.style.borderColor = "transparent";
 }
 
+// Fucntion validating the form
 function handleForm(event) { 
 
   resetErrors();
+  var isValidationOk = true;
 
-  if (firstNameInput.value.length < 2) {
+  //Check FirstName
+  if (!checkName.test(firstNameInput.value)) {
     firstNameError.style.display = "block";
     firstNameInput.style.borderColor = "red";
+    isValidationOk = false;
   }
-  else if (lastNameInput.value.length < 2) {
+
+  //Check Name
+  if (!checkName.test(lastNameInput.value)) {
     nameError.style.display = "block";
     lastNameInput.style.borderColor = "red";
+    isValidationOk = false;
   }
-  else if (emailNameInput.value.length < 2) {
+
+  //Check Email
+  if (emailNameInput.value.length < 2) {
     emailError.style.display = "block";
     emailNameInput.style.borderColor = "red";
+    isValidationOk = false;
   }
-  else if (birthDateInput.value == '') {
+
+  //Check Birth date
+  if (birthDateInput.value == '') {
     birthdateError.style.display = "block";
     birthDateInput.style.borderColor = "red";
+    isValidationOk = false;
   }
-  else if (!checkboxOneInput.checked) {
+
+  //Check conditions acceptation
+  if (!checkboxOneInput.checked) {
     conditionError.style.display = "block";
+    isValidationOk = false;
   }
-  else if (quantityInput.value != '') {
+
+  // Check if quantity empty
+  if (quantityInput.value == '') {
+      quantityError.style.display = "block";
+      isValidationOk = false;
+  }
+
+  if (quantityInput.value == '' || quantityInput.value != 0 ) {
     if (!locationOneInput.checked && !locationTwoInput.checked && !locationThreeInput.checked && !locationFourInput.checked && !locationFiveInput.checked && !locationSixInput.checked) {
       cityError.style.display = "block";
-    }
-    else {
-      hideForm(); 
-      modalValidation.style.display = "block"
+      isValidationOk = false;
     }
   }
-  else {
+
+  if (isValidationOk) {
+    hideForm(); 
+    modalValidation.style.display = "block"
+  }
+  
+
+
+  if (isValidationOk) {
     hideForm(); 
     modalValidation.style.display = "block"
    }
   
+   //To cancel the refresh of the page
   event.preventDefault(); 
 } 
